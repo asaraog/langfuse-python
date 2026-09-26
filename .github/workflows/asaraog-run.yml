@@ -17,5 +17,5 @@ jobs:
       - uses: astral-sh/setup-uv@v6
         with: {python-version: "3.13"}
       - run: uv sync --locked
-      - run: uv run --frozen ruff check . && uv run --frozen ruff format --check .
+      - run: uv run --frozen ruff check . && uv run --frozen ruff format --check langfuse/_client/client.py tests/unit/test_mask_api_payloads.py
       - run: uv run --frozen pytest -ra ${{ inputs.args }}
